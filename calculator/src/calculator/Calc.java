@@ -109,9 +109,9 @@ public class Calc extends JFrame{
 								
 								if (n <= 25) {
 									label.setText(newtext);
-									
+									info.setText("수식을 계산 중입니다 ");
 								}
-								
+								else if (n > 25) info.setText("입력 가능한 범위를 초과하였습니다 ");
 							}					
 						}
 					});
@@ -135,12 +135,12 @@ public class Calc extends JFrame{
 							else if (n > 0 && n <= 10) {
 								label.setFont(new Font("맑은 고딕", 0, 40));
 								label.setText(label.getText().substring(0, n));
-														
+								info.setText("수식을 지우는 중입니다 ");						
 							}						
 							else {
 								label.setFont(new Font("맑은 고딕", 0, 35));
 								label.setText(label.getText().substring(0, n));
-								
+								info.setText("수식을 지우는 중입니다 ");
 							}
 						}
 					});					
@@ -177,7 +177,7 @@ public class Calc extends JFrame{
 				String text = b.getText();
 				String newtext = oldtext + text;
 				label.setText(newtext);
-				
+				info.setText("수식을 계산 중입니다 ");
 			}		
 		}
 	}
@@ -188,12 +188,12 @@ public class Calc extends JFrame{
 			label.setFont(new Font("맑은 고딕", 0, 40));
 			
 			if (result < 0) {
-				
+				info.setText("값이 음수입니다. ");
 				label.setText(Double.toString(result));
 				flag = 1;
 			}	
 			else if (result >= 10000000) {
-				
+				info.setText("10,000,000 미만의 범위만 계산할 수 있습니다 ");
 				label.setText("0.0");
 			}
 			else label.setText(Double.toString(result));					
@@ -228,7 +228,7 @@ public class Calc extends JFrame{
 		for(i = 0; i < v.size(); i++) {
 			if (v.get(i) >= 10000000) {
 				check = 1;		
-				
+				info.setText("10,000,000 미만의 수끼리만 계산할 수 있습니다 ");
 				break;
 			}
 		}
