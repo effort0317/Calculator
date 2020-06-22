@@ -61,6 +61,15 @@ public class Calc extends JFrame{
 		}
 	}
 	
+	class MyMouse extends MouseAdapter {
+		public void mousePressed(MouseEvent e) {	
+			if (e.getClickCount() == 2) {
+				flag = 0;
+				label.setText(""); 
+				info.setText("수식을 입력하세요 ");
+			}		
+		}
+	}
 
 	class CenterPanel extends JPanel {
 		public CenterPanel() {
